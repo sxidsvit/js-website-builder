@@ -47,7 +47,7 @@ The plugin will generate an HTML5 file for you that includes all your webpack bu
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-(2) Создаём базовую html-зазметку 
+(2) Создаём базовую html-разметку 
 (3) Coздаём пакпку со стилями: /src/styles/main.css
 (4) Создаём базовые стили в файле main.css
 (5) Подключаем стили с помощью JS:
@@ -72,3 +72,15 @@ https://www.youtube.com/watch?v=eSaF8NXeNsA
 
 День 2
 -----------------------------------------------------------------------------
+
+(1) Создаем модель на JavaScript
+
+Правильно:  document.querySelector('#site').insertAdjacentHTML('beforeend', html)
+Ошибока:  document.querySelector('#site').insertAdjacentElement('beforeend', html)
+
+(2) Оптимизируем и улучшаем код
+
+(2.1) Элемент из DOM, при возможности, нужно получать один раз, так как это времязатратная процедура
+(2.2) Создаём файл с функциями, которые генеррируют нужные нам шаблоны ( templates.js )
+(2.3) Создаем сайт с вспомогательными функциями (utils.js), в который помещаем функции генеррирующие повторяющиеся фрагменты шаблонов
+(2.4) В опциях модели добавляем два новых поля tag и style. C учётом этого, правим функции-утилиты (utils.js), так чтобы появилась возможность вносить соответствующие изменения в щаблоны
