@@ -17,7 +17,7 @@ export class TitleBlock extends Block {
   }
 
   toHTML() {
-    const { tag, styles } = this.options
+    const { tag = 'h2', styles } = this.options
     return row(col(`
       <${tag}>${this.value}</${tag}>
     `), styles)
@@ -55,7 +55,7 @@ export class TextColumnsBlock extends Block {
   }
 
   toHTML() {
-    const { tag, styles } = this.options.tag
+    const { tag = 'div', styles } = this.options.tag
     const html = this.value.map(item => col(`<${tag} class="col-sm">${item}</${tag} >`))
     return row(html.join(''), styles)
   }
